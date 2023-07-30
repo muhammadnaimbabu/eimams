@@ -1,0 +1,27 @@
+/*!
+ * jQuery Cookiebar Plugin
+ * https://github.com/carlwoodhouse/jquery.cookieBar
+ *
+ * Copyright 2012, Carl Woodhouse
+ * Disclaimer: if you still get fined for not complying with the eu cookielaw, it's not our fault.
+ */
+ 
+.cookie-message {
+  position:fixed;
+  top:0;left:0;right:0;
+  padding:20px 160px 20px 20px;
+  background:#368fda;
+  border-bottom:1px solid #ccc;
+  box-shadow:0px 0px 3px #ccc;
+  z-index: 99999;
+}
+.cookie-message a.cookiebar-close {
+  position:absolute;
+  bottom:12px; *top:-2px; right:20px;
+  cursor:pointer;
+}
+.cookie-message p, .cookie-message a.cookiebar-close {
+  color:#fff;
+  font:18px Arial;
+  margin:0.6em 0;
+}
