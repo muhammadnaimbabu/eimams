@@ -58,6 +58,40 @@ video {
   padding: 2em 0;
 }
 
+.donate-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+  padding: 2em 0;
+}
+
+.donate-card {
+  padding: 2em;
+}
+
+.active-donate-card {
+  background-color: #f8f4e4;
+  border: 2px solid #cabb78;
+}
+
+.bank-details {
+  /* text-align: justify; */
+}
+
+.breadcrumb {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  display: inline;
+  padding: 0.5em 1em;
+  margin-top: 5px;
+}
+
+.breadcrumb a {
+  color: #112f48 !important;
+}
+
 .primary-btn {
   padding: 15px 24px;
   color: #162c53;

@@ -273,6 +273,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['submit_filter'])) {
 					</div>
 				</div>
 			</div>
+
 		<?php }	?>
 		<div class="card__slider card__slider--flex">
 			<div class="card__pages">
@@ -292,18 +293,6 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['submit_filter'])) {
 				<?php } ?>
 			</div>
 		</div>
-
-
-		<!-- <form class="form-horizontal" enctype='multipart/form-data' method="post" action="<?php echo "http://" . $_SERVER["SERVER_NAME"] . $_SERVER['REQUEST_URI']; ?>">
-		<div class="col-lg-3 col-md-3 col-sm-4 col-lg-pull-9 col-md-pull-9 col-sm-pull-8 sidebar">
-			Upcoming Events -->
-		<!-- <?php
-				// include('template/upcoming-events.php');
-				?> -->
-		<!-- /Upcoming Events
-		</div>
-	</form> -->
-
 	</section>
 </div>
 
