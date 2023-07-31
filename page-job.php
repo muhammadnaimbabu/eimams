@@ -178,131 +178,134 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['submit_filter'])) {
 
 <?php include('template/front-end/job-top-banner.php'); ?>
 <?php include('template/front-end/search-bar.php'); ?>
-<section class="container">
 
-	<?php
-	//print_r($args);
+<div class="py-2em">
+	<section class="container">
 
-	while ($query->have_posts()) {
-		$query->the_post();
+		<?php
+		//print_r($args);
 
-		$term_list = wp_get_post_terms($post->ID, 'types', array("fields" => "names"));
+		while ($query->have_posts()) {
+			$query->the_post();
 
-		if ($term_list[0] == 'Full Time') {
-			$colorclass = 'border_full_time';
-		}
-		if ($term_list[0] == 'Part Time') {
-			$colorclass = 'border_part_time';
-		}
-		if ($term_list[0] == 'Cover') {
-			$colorclass = 'border_cover';
-		}
-		if ($term_list[0] == 'Replacement') {
-			$colorclass = 'border_replacement';
-		}
-		if ($term_list[0] == 'Short Terms') {
-			$colorclass = 'border_short_terms';
-		} 	   ?>
+			$term_list = wp_get_post_terms($post->ID, 'types', array("fields" => "names"));
+
+			if ($term_list[0] == 'Full Time') {
+				$colorclass = 'border_full_time';
+			}
+			if ($term_list[0] == 'Part Time') {
+				$colorclass = 'border_part_time';
+			}
+			if ($term_list[0] == 'Cover') {
+				$colorclass = 'border_cover';
+			}
+			if ($term_list[0] == 'Replacement') {
+				$colorclass = 'border_replacement';
+			}
+			if ($term_list[0] == 'Short Terms') {
+				$colorclass = 'border_short_terms';
+			} 	   ?>
 
 
-		<div class="card__contents">
-			<div class="card__img">
-				<?php if (has_post_thumbnail()) {
-					echo get_the_post_thumbnail(get_the_ID(), array(200, 200));
-				} else {
-					echo "<img src='" . get_template_directory_uri() . "/images/default-dp-eimams.png'/> ";
-				} 	?>
-			</div>
-			<div class="card__item">
-				<a href="#" class="card__Fulltime">
-					<?php $term_list = wp_get_post_terms($post->ID, 'types', array("fields" => "names"));
-					if ($term_list[0] == 'Full Time') {
-						echo ' <span>' . $term_list[0] . '</span>';
-					}
-					if ($term_list[0] == 'Part Time') {
-						echo ' <span>' . $term_list[0] . '</span>';
-					}
-					if ($term_list[0] == 'Cover') {
-						echo ' <span>' . $term_list[0] . '</span>';
-					}
-					if ($term_list[0] == 'Replacement') {
-						echo ' <span>' . $term_list[0] . '</span>';
-					}
-					if ($term_list[0] == 'Short Terms') {
-						echo ' <span>' . $term_list[0] . '</span>';
-					}
-					if ($term_list[0] == null) {
-						echo ' <sp>' . 'Undefined' . '</sp an>';
-					} ?>
-				</a>
-				<h2 class="card__header">
-					<span class="job-title"> <?php echo get_the_title(); ?> </span>
-				</h2>
-				<p class="card__text">
-					<?php echo get_the_content(); ?>
-				</p>
-				<a href="
+			<div class="card__contents">
+				<div class="card__img">
+					<?php if (has_post_thumbnail()) {
+						echo get_the_post_thumbnail(get_the_ID(), array(200, 200));
+					} else {
+						echo "<img src='" . get_template_directory_uri() . "/images/default-dp-eimams.png'/> ";
+					} 	?>
+				</div>
+				<div class="card__item">
+					<a href="#" class="card__Fulltime">
+						<?php $term_list = wp_get_post_terms($post->ID, 'types', array("fields" => "names"));
+						if ($term_list[0] == 'Full Time') {
+							echo ' <span>' . $term_list[0] . '</span>';
+						}
+						if ($term_list[0] == 'Part Time') {
+							echo ' <span>' . $term_list[0] . '</span>';
+						}
+						if ($term_list[0] == 'Cover') {
+							echo ' <span>' . $term_list[0] . '</span>';
+						}
+						if ($term_list[0] == 'Replacement') {
+							echo ' <span>' . $term_list[0] . '</span>';
+						}
+						if ($term_list[0] == 'Short Terms') {
+							echo ' <span>' . $term_list[0] . '</span>';
+						}
+						if ($term_list[0] == null) {
+							echo ' <sp>' . 'Undefined' . '</sp an>';
+						} ?>
+					</a>
+					<h2 class="card__header">
+						<span class="job-title"> <?php echo get_the_title(); ?> </span>
+					</h2>
+					<p class="card__text short_desc">
+						<?php echo strip_tags(get_the_content()); ?>
+					</p>
+					<a href="
 				<?php echo get_post_meta(get_the_ID(), 'website', true); ?>
 				" class="card__link card__text"><?php echo get_post_meta(get_the_ID(), 'company_name', true); ?></a>
-			</div>
-			<div class="card__ItemsButton">
-				<p class="card__date">Posted <?php $start_date = strtotime(get_post_meta(get_the_ID(), 'ad_start_date', true));
-												echo $start_date = date('d-M-Y', $start_date); ?></p>
-				<p class="card__payment"><?php
-											$salray = get_post_meta(get_the_ID(), 'sal_amount', true);
-											$prd = get_post_meta(get_the_ID(), 'sal_prd', true);
-											if ($salray == !null) {
-												$final_sal = '$' . $salray;
-												if ($prd == !null) {
-													echo $final_sal . ' / ' . $prd;
+				</div>
+				<div class="card__ItemsButton">
+					<p class="card__date">Posted <?php $start_date = strtotime(get_post_meta(get_the_ID(), 'ad_start_date', true));
+													echo $start_date = date('d-M-Y', $start_date); ?></p>
+					<p class="card__payment"><?php
+												$salray = get_post_meta(get_the_ID(), 'sal_amount', true);
+												$prd = get_post_meta(get_the_ID(), 'sal_prd', true);
+												if ($salray == !null) {
+													$final_sal = '$' . $salray;
+													if ($prd == !null) {
+														echo $final_sal . ' / ' . $prd;
+													} else {
+														echo 'Negotiable';
+													}
+													// $final_output = $final_sal .
 												} else {
 													echo 'Negotiable';
 												}
-												// $final_output = $final_sal .
-											} else {
-												echo 'Negotiable';
-											}
-											?>
+												?>
 
-				</p>
-				<div class="card__button">
-					<a href="#" class="cardButton__job"><?php echo get_the_ID(); ?></a>
-					<a href="#" class="cardButton__apply">Apply Now</a>
+					</p>
+					<div class="card__button">
+						<a href="#" class="cardButton__job">Details</a>
+						<a href="#" class="cardButton__apply">Apply Now</a>
+					</div>
 				</div>
 			</div>
-		</div>
-	<?php }	?>
-	<div class="card__slider card__slider--flex">
-		<div class="card__pages">
-			<p class="card_job">Jobs per page</p>
-			<div class="card__counts">
-				<p class="card__time card_counts">20 <i class="fa-solid fa-chevron-down"></i></p>
-			</div>
-
-		</div>
-		<div class="card__arrows">
-			<?php if ($query->max_num_pages > 1) { ?>
-				<div class="numeric-pagination">
-					<?php if (function_exists("pagination")) {
-						pagination($query->max_num_pages);
-					} ?>
+		<?php }	?>
+		<div class="card__slider card__slider--flex">
+			<div class="card__pages">
+				<p class="card_job">Jobs per page</p>
+				<div class="card__counts">
+					<p class="card__time card_counts">20 <i class="fa-solid fa-chevron-down"></i></p>
 				</div>
-			<?php } ?>
+
+			</div>
+			<div class="card__arrows">
+				<?php if ($query->max_num_pages > 1) { ?>
+					<div class="numeric-pagination">
+						<?php if (function_exists("pagination")) {
+							pagination($query->max_num_pages);
+						} ?>
+					</div>
+				<?php } ?>
+			</div>
 		</div>
-	</div>
 
 
-	<!-- <form class="form-horizontal" enctype='multipart/form-data' method="post" action="<?php echo "http://" . $_SERVER["SERVER_NAME"] . $_SERVER['REQUEST_URI']; ?>">
+		<!-- <form class="form-horizontal" enctype='multipart/form-data' method="post" action="<?php echo "http://" . $_SERVER["SERVER_NAME"] . $_SERVER['REQUEST_URI']; ?>">
 		<div class="col-lg-3 col-md-3 col-sm-4 col-lg-pull-9 col-md-pull-9 col-sm-pull-8 sidebar">
 			Upcoming Events -->
-	<!-- <?php
-			// include('template/upcoming-events.php');
-			?> -->
-	<!-- /Upcoming Events
+		<!-- <?php
+				// include('template/upcoming-events.php');
+				?> -->
+		<!-- /Upcoming Events
 		</div>
 	</form> -->
 
-</section>
+	</section>
+</div>
 
 <style>
 	.SunniDenomination,
