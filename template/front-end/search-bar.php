@@ -88,6 +88,7 @@
                             ?>
                     </div>
                     </ul>
+                    <i class="feather-16" data-feather="chevron-down"></i>
                 </div>
             </div>
             <!-- // Item  -->
@@ -113,6 +114,7 @@
 
             <div class="SunniDenomination">
                 <div class="filters">
+                    <i class="feather-16" data-feather="sun"></i>
                     <h3 style="color:#084a86;margin-top:15px;font-size:16px " class="showhideJobCategory "><label> <input type="radio" value="sunni" class="denominationSelection shia_selection" name="denominationSelection" checked="checked"> </label> <label class="shia_selection"> <input name="denominationSelection shia_selection" type="radio" value="shia" class="denominationSelection"></label> </h3>
                     <?php $usr_madhab = wp_dropdown_categories(array('show_option_none' => 'Select Madhab', 'echo' => 0, 'taxonomy' => 'madhab', 'selected' => (isset($_POST['usr_madhab']) ? $_POST['usr_madhab'] : -1), 'hierarchical' => true, 'class'  => 'form-control',  'hide_empty' => 0, 'orderby' => 'NAME', 'order' => 'ASC',));
                     $usr_madhab = str_replace("name='cat' id='cat'", "name='usr_madhab' ", $usr_madhab);
@@ -124,6 +126,7 @@
 
             <div class="SunniDenomination">
                 <div class="filters">
+                    <i class="feather-16" data-feather="sun"></i>
                     <?php $usr_aqeeda = wp_dropdown_categories(array('show_option_none' => 'Select Aqeeda/Belief', 'echo' => 0, 'taxonomy' => 'aqeeda', 'selected' => (isset($_POST['usr_aqeeda']) ? $_POST['usr_aqeeda'] : -1), 'hierarchical' => true, 'class'  => 'form-control',  'hide_empty' => 0, 'orderby' => 'NAME', 'order' => 'ASC',));
                     $usr_aqeeda = str_replace("name='cat' id='cat'", "name='usr_aqeeda' ", $usr_aqeeda);
                     echo $usr_aqeeda; ?>
@@ -134,6 +137,7 @@
 
             <div class="ShiaDenomination">
                 <div class="filters">
+                    <i class="feather-16" data-feather="sun"></i>
                     <?php $usr_madhab_shia = wp_dropdown_categories(array('show_option_none' => 'Select Madhab', 'echo' => 0, 'taxonomy' => 'Shiamadhab', 'selected' => $_POST['usr_madhab_shia'], 'hierarchical' => true, 'class'  => 'form-control',  'hide_empty' => 0, 'orderby' => 'NAME', 'order' => 'ASC',));
                     $usr_madhab_shia = str_replace("name='cat' id='cat'", "name='usr_madhab_shia' ", $usr_madhab_shia);
                     echo $usr_madhab_shia; ?>
@@ -141,6 +145,7 @@
                 </div>
             </div>
             <div class="ShiaDenomination">
+                <i class="feather-16" data-feather="sun"></i>
                 <div class="filters">
                     <select name="usr_aqeeda_shia" id="usr_aqeeda_shia">
                         <?php Shia_Aqeeda_select($_POST['usr_aqeeda_shia']); ?>
@@ -182,7 +187,7 @@
             <!-- // Item  -->
             <div class="filters">
                 <i class="feather-16" data-feather="trending-up"></i>
-                <?php $usr_yr_of_exp = wp_dropdown_categories(array('show_option_none' => 'Select Years of Experience', 'echo' => 0, 'taxonomy' => 'yr_of_exp', 'selected' => (isset($_POST['usr_yr_of_exp']) ? $_POST['usr_yr_of_exp'] : -1), 'hierarchical' => true, 'class'  => 'form-control',  'hide_empty' => 0));
+                <?php $usr_yr_of_exp = wp_dropdown_categories(array('show_option_none' => 'Select Experience', 'echo' => 0, 'taxonomy' => 'yr_of_exp', 'selected' => (isset($_POST['usr_yr_of_exp']) ? $_POST['usr_yr_of_exp'] : -1), 'hierarchical' => true, 'class'  => 'form-control',  'hide_empty' => 0));
                 $usr_yr_of_exp = str_replace("name='cat' id='cat'", "name='usr_yr_of_exp' ", $usr_yr_of_exp);
                 echo $usr_yr_of_exp;     ?>
                 <i class="feather-16" data-feather="chevron-down"></i>
@@ -204,26 +209,37 @@
                 echo $usr_language;     ?>
                 <i class="feather-16" data-feather="chevron-down"></i>
             </div>
+
             <div class="filters">
-                <input type="text" style="width:50%"> to <input type="text" style="width:50%">
+                <i class="feather-16" data-feather="dollar-sign"></i>
+                <input type="number" placeholder="Salary Range (From)">
             </div>
 
+            <div class="filters">
+                <i class="feather-16" data-feather="dollar-sign"></i>
+                <input type="number" placeholder="Salary Range (to)">
+            </div>
             <!-- // Item  -->
             <div class="filters">
                 <i class="feather-16" data-feather="dollar-sign"></i>
-                <?php $pref_sal_prd = wp_dropdown_categories(array('show_option_none' => 'Select An Option', 'echo' => 0, 'taxonomy' => 'sal_prd', 'selected' => (isset($_POST['pref_sal_prd']) ? $_POST['pref_sal_prd'] : -1), 'hierarchical' => true, 'class'  => 'form-control',  'hide_empty' => 0));
+                <?php $pref_sal_prd = wp_dropdown_categories(array('show_option_none' => 'Salary Type', 'echo' => 0, 'taxonomy' => 'sal_prd', 'selected' => (isset($_POST['pref_sal_prd']) ? $_POST['pref_sal_prd'] : -1), 'hierarchical' => true, 'class'  => 'form-control',  'hide_empty' => 0));
                 $pref_sal_prd = str_replace("name='cat' id='cat'", "name='pref_sal_prd' ", $pref_sal_prd);
                 echo $pref_sal_prd; ?>
                 <i class="feather-16" data-feather="chevron-down"></i>
             </div>
 
             <div class="filters">
-                <?php $pref_sal_optn = wp_dropdown_categories(array('show_option_none' => 'Select An Option', 'echo' => 0, 'taxonomy' => 'sal_optn', 'selected' => (isset($_POST['pref_sal_optn']) ? $_POST['pref_sal_optn'] : -1), 'hierarchical' => true, 'class'  => 'form-control',  'hide_empty' => 0));
+                <i class="feather-16" data-feather="dollar-sign"></i>
+                <?php $pref_sal_optn = wp_dropdown_categories(array('show_option_none' => 'Salary Option', 'echo' => 0, 'taxonomy' => 'sal_optn', 'selected' => (isset($_POST['pref_sal_optn']) ? $_POST['pref_sal_optn'] : -1), 'hierarchical' => true, 'class'  => 'form-control',  'hide_empty' => 0));
                 $pref_sal_optn = str_replace("name='cat' id='cat'", "name='pref_sal_optn' ", $pref_sal_optn);
                 echo $pref_sal_optn;      ?>
             </div>
-            <div class="filters">
-                <button class="submit-btn" name="submit_filter" type="submit">Search</button>
+
+            <div class="filters search-btn">
+                <div class="button">
+                    <i class="feather-16" data-feather="search"></i>
+                    <button class="submit-btn " name="submit_filter" type="submit">Search Job</button>
+                </div>
             </div>
         </div>
         </div>

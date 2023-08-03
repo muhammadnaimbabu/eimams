@@ -62,22 +62,31 @@ video {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
   width: 100%;
   padding: 2em 0;
 }
 
 .donate-card {
-  padding: 2em;
+  padding: 1em;
+  /* border: 2px solid #cabb78; */
+}
+
+.donate-card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+td,
+th {
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+  padding: 5px 3px;
+  font-size: 14px;
 }
 
 .active-donate-card {
   background-color: #f8f4e4;
-  border: 2px solid #cabb78;
-}
-
-.bank-details {
-  /* text-align: justify; */
 }
 
 .breadcrumb {
@@ -92,6 +101,21 @@ video {
   color: #112f48 !important;
 }
 
+.amount-select {
+  padding: 10px 20px;
+  width: 60%;
+}
+
+.donate-submit-btn {
+  padding: 13px 30px;
+  border: none;
+  outline: none;
+  color: #112f48;
+  background-color: #cabb78;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
 .primary-btn {
   padding: 15px 24px;
   color: #162c53;
@@ -678,22 +702,23 @@ video {
 .search-filters {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 2em;
+  gap: 1.5em;
   padding-bottom: 3em;
 }
 .search-filters .filters {
   padding: 12px 20px;
   background-color: white;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5em;
+  gap: 2px;
   border-radius: 100px;
+  border: 1px solid rgb(212, 212, 212);
 }
 .search-filters .filters select {
   background: white;
   padding: 0 5px;
-  width: 100px;
+  width: 100%;
   height: 34px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -709,6 +734,41 @@ video {
   cursor: pointer;
   color: #3097d1;
   pointer-events: none;
+}
+
+.filters input {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+
+.search-btn {
+  background-color: #112f48 !important;
+  color: white !important;
+}
+
+.search-btn button {
+  color: white;
+}
+
+.apply {
+  width: 100%;
+  height: 10em;
+  outline: none;
+  border: 1px solid #cabb78;
+  padding: 1em;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.apply__now {
+  display: none;
+}
+
+.cover-submit-btn {
+  margin-top: 1em;
 }
 /* .search-filters .filters:nth-last-child(1) {
   background-color: #162c53;
@@ -904,6 +964,12 @@ video {
   align-items: center;
   gap: 50px;
   padding: 100px 0px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 .eimams__contents h2 {
@@ -1609,6 +1675,66 @@ footer {
   background: #f5f5f5;
   margin-left: 12px;
 }
+
+/* job description-->>  */
+.job__details,
+.apply__now {
+  background: #f5f5f5;
+  padding: 2.25rem;
+  border-radius: 24px;
+  margin: 1rem 0;
+  transition: 0.5s ease all;
+}
+.jobDetails__subheader {
+  color: #162c53;
+  font-size: 2.25rem;
+  font-weight: 700;
+  font-family: "Philosopher", sans-serif;
+  padding-bottom: 1.5rem;
+}
+.details__innerItems {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.details__innerItems p,
+.company__inner p,
+.company__inner span,
+.company__inner a {
+  color: #162c53;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+.company__details,
+.acomodation__details {
+  padding: 2rem 0;
+}
+.company__innerItems {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.company__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.company__inner:nth-child(2) {
+  width: 80%;
+  padding: 0 1.25rem;
+}
+
+.apply__now input {
+  width: 100%;
+  border: none;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+}
+
 /* ===========card end===========  */
 
 /*======== copyrights end =========*/ /*# sourceMappingURL=main.css.map */

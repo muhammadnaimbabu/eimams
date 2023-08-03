@@ -59,7 +59,7 @@ $sidebar_class = 'col-lg-12 col-md-12 col-sm-12';
 
 				<form action="<?php echo site_url(); ?>/payment-page/?donation_yes=yes" method="post">
 					<input type="hidden" name="name_of_org" value="Mercy Foundation">
-					<select name="amount" id="donation_amt_drp" style="width:120px; margin-right:10px">
+					<select name="amount" class="amount-select" id="donation_amt_drp">
 						<option value="10.00">&pound;10</option>
 						<option value="20.00">&pound;20</option>
 						<option value="30.00">&pound;30</option>
@@ -72,8 +72,8 @@ $sidebar_class = 'col-lg-12 col-md-12 col-sm-12';
 						<option value="100.00" selected>&pound;100</option>
 						<option value="0">Custom</option>
 					</select>
-					<input type="text" name="custom_amt" id="custom_amt" value="" size="5" style="width: 65px;">
-					<input name="submit" type="submit" class="button" style="padding:6px 10px 5px 10px;" value="Donation" title="The developers need your donation! Make payments with PayPal - it's fast, free and secure!">
+					<input type="text" name="custom_amt" id="custom_amt" value="" size="5" class="amount-select">
+					<input name="submit" type="submit" class="donate-submit-btn" value="Donation" title="The developers need your donation! Make payments with PayPal - it's fast, free and secure!">
 				</form>
 
 			</div>
@@ -118,7 +118,7 @@ $sidebar_class = 'col-lg-12 col-md-12 col-sm-12';
 
 				<form action="<?php echo site_url(); ?>/payment-page/?donation_yes=yes" method="post">
 					<input type="hidden" name="name_of_org" value="Masjid Project">
-					<select name="amount" id="donation_amt_drpms" style="width:120px; margin-right:10px">
+					<select name="amount" id="donation_amt_drpms" class="amount-select">
 						<option value="10.00">&pound;10</option>
 						<option value="20.00">&pound;20</option>
 						<option value="30.00">&pound;30</option>
@@ -131,8 +131,8 @@ $sidebar_class = 'col-lg-12 col-md-12 col-sm-12';
 						<option value="100.00" selected>&pound;100</option>
 						<option value="0">Custom</option>
 					</select>
-					<input type="text" name="custom_amt" id="custom_amtms" value="" size="5" style="width: 65px;">
-					<input name="submit" type="submit" class="button" style="padding:6px 10px 5px 10px;" value="Donation" title="The developers need your donation! Make payments with PayPal - it's fast, free and secure!">
+					<input type="text" name="custom_amt" id="custom_amtms" class="amount-select" value="" size="5">
+					<input name="submit" type="submit" class="donate-submit-btn" value="Donation" title="The developers need your donation! Make payments with PayPal - it's fast, free and secure!">
 				</form>
 
 			</div>
@@ -175,14 +175,39 @@ $sidebar_class = 'col-lg-12 col-md-12 col-sm-12';
 			<div class="bank-transfer">
 				<h3 class="bank-heading"><span>Donate Via Bank Transfer</span></h3>
 				<div class="bank-details-content">
-					<ul class="bank-details">
-						<li><span>Bank Name</span>:<strong>Tide</strong></li>
-						<li><span>Account Name</span>:<strong>Eimams Online Limited</strong></li>
-						<li><span>Account No</span>:<strong>18114953</strong></li>
-						<li><span>Sort Code</span>:<strong>04-06-05</strong></li>
-						<li><span>IBAN</span>:<strong>GB13CLR04060518114953</strong></li>
-						<li><span>SWIFT</span>:<strong>CLRBGB22</strong></li>
-					</ul>
+					<table>
+						<tr>
+							<td>Bank Name</td>
+							<td>:</td>
+							<td><strong>Tide</strong></td>
+						</tr>
+						<tr>
+							<td>Account Name</td>
+							<td>:</td>
+							<td><strong>Eimams Online</strong></td>
+						</tr>
+						<tr>
+							<td>Account No</td>
+							<td>:</td>
+							<td><strong>18114953</strong></td>
+						</tr>
+						<tr>
+							<td>Sort Code</td>
+							<td>:</td>
+							<td><strong>04-06-05</strong></td>
+						</tr>
+						<tr>
+							<td>IBAN</td>
+							<td>:</td>
+							<td><strong>GB13CLR04060518114953</strong></td>
+						</tr>
+						<tr>
+							<td>SWIFT</td>
+							<td>:</td>
+							<td><strong>CLRBGB22</strong></td>
+						</tr>
+					</table>
+
 				</div>
 			</div>
 

@@ -268,11 +268,127 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['submit_filter'])) {
 
 					</p>
 					<div class="card__button">
-						<a href="#" class="cardButton__job">Details</a>
-						<a href="#" class="cardButton__apply">Apply Now</a>
+						<a href="#" id="details-btn" class="cardButton__job">Details</a>
+						<a href="#" id="apply-now-btn" class="cardButton__apply">Apply Now</a>
 					</div>
 				</div>
 			</div>
+
+			<div class="apply__now">
+				<form action="">
+					<textarea name="" id class="apply" placeholder="Write your cover massage to the employer."></textarea>
+					<button type="submit" class="cover-submit-btn cardButton__apply">Submit</button>
+				</form>
+			</div>
+
+			<div class="job__details job_details<?php static $i = 0;
+												echo $i++ ?>">
+				<div class="job__details__contents">
+					<h2 class="jobDetails__subheader">Job Description</h2>
+					<div class="details__items">
+						<div class="details__innerItems">
+							<i class="feather-16" data-feather="minus"></i>
+							<p>Content Creation And Social Media Marketing Campaigns.</p>
+						</div>
+						<div class="details__innerItems">
+							<i class="feather-16" data-feather="minus"></i>
+							<p>Implement Marketing Tactics To Enhance Relationships With Donors, Building Confidence In The Brand And It’s Projects.</p>
+						</div>
+						<div class="details__innerItems">
+							<i class="feather-16" data-feather="minus"></i>
+							<p>Generate, Distribute, And Address Online Feedback From Reviews.
+								.</p>
+						</div>
+						<div class="details__innerItems">
+							<i class="feather-16" data-feather="minus"></i>
+							<p>Gain And Maintain Thorough, Up-To-Date Knowledge Of Company Services On Offer.</p>
+						</div>
+						<div class="details__innerItems">
+							<i class="feather-16" data-feather="minus"></i>
+							<p>Keep Up To Date With And Analyse Trends In Activity From Both Customers And Competitors.</p>
+						</div>
+					</div>
+					<div class="company__details">
+						<div class="company__innerItems">
+							<div class="company__inner">
+								<p>company name</p>
+								<span>:</span>
+							</div>
+							<div class="company__inner">
+								<p>Goreeb Yateem Trust Fund</p>
+							</div>
+						</div>
+						<div class="company__innerItems">
+							<div class="company__inner">
+								<p>Company Description</p>
+								<span>:</span>
+							</div>
+							<div class="company__inner">
+								<p>Humanitrian Organisation (Charity)</p>
+							</div>
+						</div>
+						<div class="company__innerItems">
+							<div class="company__inner">
+								<p>Address</p>
+								<span>:</span>
+							</div>
+							<div class="company__inner">
+								<p>259 (2nd Floor) White Chapel Road</p>
+							</div>
+						</div>
+						<div class="company__innerItems">
+							<div class="company__inner">
+								<p>City</p>
+								<span>:</span>
+							</div>
+							<div class="company__inner">
+								<p>London</p>
+							</div>
+						</div>
+						<div class="company__innerItems">
+							<div class="company__inner">
+								<p>Country</p>
+								<span>:</span>
+							</div>
+							<div class="company__inner">
+								<p>United Kingdom</p>
+							</div>
+						</div>
+						<div class="company__innerItems">
+							<div class="company__inner">
+								<p>Website</p>
+								<span>:</span>
+							</div>
+							<div class="company__inner">
+								<a href="#">Www.Goreebfund.Com</a>
+							</div>
+						</div>
+					</div>
+					<div class="acomodation__details">
+						<h2 class="jobDetails__subheader">ACCOMODATION DETAILS </h2>
+						<div class="company__innerItems">
+							<div class="company__inner">
+								<p>Legal Check</p>
+								<span>:</span>
+							</div>
+							<div class="company__inner">
+								<p>Not Applicable</p>
+							</div>
+						</div>
+						<div class="company__innerItems">
+							<div class="company__inner">
+								<p>Enter Your Descriptoin Here</p>
+								<span>:</span>
+							</div>
+							<div class="company__inner">
+								<p>NULL</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
 
 		<?php }	?>
 		<div class="card__slider card__slider--flex">
@@ -381,7 +497,6 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['submit_filter'])) {
 <script>
 	// alert('W');
 	$(function() {
-
 		$("#multi-column").hide();
 
 		$("#job_Cate_button").click(function(e) {
@@ -425,6 +540,14 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['submit_filter'])) {
 		});
 		// $(".showhideJobCategory").show();
 		// $(".SunniDenomination").show();
+
+		$("#details-btn").click(function() {
+			event.preventDefault();
+			var i = 0;
+
+			$('.job_details' + $(this).attr('job_details')).show();
+			// console.log();
+		})
 	});
 </script>
 
